@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animação personalizada para o botão */
+@keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(2rem); /* Altere a distância para o valor desejado */
+    }
+  }
+  
+  /* Aplicar a animação quando o botão for clicado */
+  .animate-card {
+    animation: moveRight 0.5s ease forwards; /* Altere a duração da animação conforme desejado */
+    transition: transform s ease;
+  }
+  
+  /* Estilize o ícone do botão */
+  .fa-cart-plus {
+    margin-right: 0.5rem; /* Espaçamento entre o ícone e o texto do botão */
+  }
+  
