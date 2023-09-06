@@ -24,8 +24,15 @@ export function renderizarCatalogo() {
   }
 
   for (const produtoCatalogo of catalogo) {
-    document
-      .getElementById(`adicionar-${produtoCatalogo.id}`)
-      .addEventListener("click", () => adicionarAoCarrinho(produtoCatalogo.id));
+    const botao = document.getElementById(`adicionar-${produtoCatalogo.id}`);
+    botao.addEventListener("click", () => {
+      adicionarAoCarrinho(produtoCatalogo.id);
+      botao.classList.add("animate-card");
+
+      // Remover a classe "animate-card" após 1 segundo
+      setTimeout(() => {
+        botao.classList.remove("animate-card");
+      }, 1000); // 1000 milissegundos (1 segundo)
+    });
   }
 }
